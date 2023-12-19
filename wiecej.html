@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<title>7 najlepszych ninja - Więcej</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://dimsemenov.com/plugins/magnific-popup/dist/magnific-popup.css">
+	<script src="https://dimsemenov.com/plugins/magnific-popup/third-party-libs/zepto.min.js"></script>
+	<script src="https://dimsemenov.com/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<script>
+		$(document).ready(() => {
+			try {
+				$("#gallery").magnificPopup({
+					delegate: "img",
+					type: "image",
+					closeOnContentClick: true,
+					preload: [1, 1],
+					gallery: {
+						enabled: true
+					}
+				})
+				console.log("Dynamic gallery deployed succesfully!")
+			} catch (e) {
+				console.error(`Error during deployment of dynamic gallery\n${e}`)
+			}
+		})
+	</script>
+</head>
+
+<body>
+
+	<div id="gallery">
+		<img src="img/ninjago1.jpg" data-mfp-src="img/ninjago1.jpg" alt="wszyscy ninja">
+		<img src="img/ninjago2.jpg" data-mfp-src="img/ninjago2.jpg" alt="trening ninja">
+		<img src="img/dareth2.jpg" data-mfp-src="img/dareth2.jpg" alt="dareth dojo">
+		<img src="img/dareth3.jpg" data-mfp-src="img/dareth3.jpg" alt="dareth z kawą">
+	</div>
+
+	<form id="animacja">
+		<h1>Krótka ankieta</h1><br><br>
+		<label>1. Jaki jest twój ulubiony ninja
+			<select name="pytanie1">
+				<option value="">--Wybierz jednego--</option>
+				<option value="wu">Sensei Wu</option>
+				<option value="dareth">Dareth</option>
+				<option value="lloyd">Lloyd</option>
+				<option value="kai">Kai</option>
+				<option value="zane">Zane</option>
+				<option value="jay">Jay</option>
+				<option value="cole">Cole</option>
+			</select>
+		</label><br>
+		<label>2. Jakiego ninja ci tu brakuje?
+			<input type=text placeholder="podaj jego nazwę" minlength="3" maxlength="20">
+		</label>
+
+		<br><br>
+		<button type="submit">Wyślij ankietę</button>
+	</form>
+
+</body>
+
+</html>
